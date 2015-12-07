@@ -21,7 +21,7 @@ Fill your username as ‘Repository name’ and check ‘Initialize this reposit
 <meta property="og:description" content="Enable your Github blogQuick guide
 Sign in your github, click ‘+’ in top right corner and select ‘New repository’.
 Fill your username as ‘Repository name’ and check ‘Initialize this repository with a">
-<meta property="og:updated_time" content="2015-12-07T08:44:46.000Z">
+<meta property="og:updated_time" content="2015-12-07T08:45:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Install Hexo Blog on Github">
 <meta name="twitter:description" content="Enable your Github blogQuick guide
@@ -125,7 +125,7 @@ Fill your username as ‘Repository name’ and check ‘Initialize this reposit
 <li><a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">English document</a>.</li>
 </ul>
 <h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">generate</span> <span class="comment">//or hexo g</span></span><br></pre></td></tr></table></figure>
-<p>Run before you preview you articles. But you may need to run `hexo clean’ first to clean up static files, especially after switch theme, delete article and etc.<br><em>No need to restart hexo server.</em></p>
+<p>Run before you preview you articles. But you may need to run <code>hexo clean</code> first to clean up static files, especially after switch theme, delete article and etc.<br><em>No need to restart hexo server.</em></p>
 <h3 id="Deploy_to_Gihub"><a href="#Deploy_to_Gihub" class="headerlink" title="Deploy to Gihub"></a>Deploy to Gihub</h3><p>Modify <strong>deploy:</strong> section in _config.yml file<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourusername/yourusername.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
 <p>Run<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy <span class="comment">//or hexo d</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="Extend"><a href="#Extend" class="headerlink" title="Extend"></a>Extend</h2><h3 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h3><p>View wiki page <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes</a></p>
