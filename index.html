@@ -1,33 +1,48 @@
 
  <!DOCTYPE HTML>
-<html  xmlns:wb="http://open.weibo.com/wb">
+<html >
 <head>
   <meta charset="UTF-8">
   
     <title>Sword&#39;s Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Sword Sun">
     
+
     
+    <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sword's Blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Sword's Blog">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sword's Blog">
+<meta name="twitter:description">
+
     
-    
-    <link rel="alternate" href="atom.xml" title="Sword&#39;s Blog" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Sword&#39;s Blog" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
     
     
-    <link rel="apple-touch-icon" href="/img/pacman.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon" href="/img/jacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/jacman.jpg">
     
     <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
   <body>
     <header>
-      <div>
+      
+<div>
 		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="Sword&#39;s Blog" title="Sword&#39;s Blog"/></a>
+			</div>
+			
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="Sword&#39;s Blog">Sword&#39;s Blog</a></h1>
 				<h2 class="blog-motto"></h2>
@@ -38,76 +53,208 @@
 				<ul>
 					<ul>
 					 
-						<li><a href="/">首页</a></li>
+						<li><a href="/">Home</a></li>
 					
-						<li><a href="/archives">文章</a></li>
+						<li><a href="/archives">Archives</a></li>
 					
-						<li><a href="/about">关于</a></li>
-					
-						<li><a href="/atom.xml">RSS订阅</a></li>
+						<li><a href="/about">About</a></li>
 					
 					<li>
-					
-					<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="text" id="search" name="q" autocomplete="off" maxlength="30" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
 					</form>
 					
 					</li>
 				</ul>
 			</nav>			
 </div>
-
     </header>
-    
-
     <div id="container">
       <div id="main">
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/12/11/hello-world/" title="hello-world" itemprop="url">
-  
-    <h1 itemprop="name">hello-world</h1>
+   
     
-     
-           <p itemprop="description" >HELLO WORLDTHIS IS SWORD</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/07/bluemix-quick-start/" title="Bluemix Quick Start" itemprop="url">Bluemix Quick Start</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sword Sun" target="_blank" itemprop="author">Sword Sun</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-07T09:17:44.000Z" itemprop="datePublished"> 發表於 2015-12-07</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2015-12-11T12:30:43.000Z" itemprop="datePublished">2015-12-11</time>
-  </a>
-</section>
+        <h2 id="Bluemix_Quick_Start"><a href="#Bluemix_Quick_Start" class="headerlink" title="Bluemix Quick Start"></a>Bluemix Quick Start</h2><h3 id="Create_an_IBM_id"><a href="#Create_an_IBM_id" class="headerlink" title="Create an IBM id"></a>Create an IBM id</h3><p><a href="https://www.ibm.com/account/us-en/signup/register.html" target="_blank" rel="external">https://www.ibm.com/account/us-en/signup/register.html</a><br><em>Ignore if you already have IBM id.</em></p>
+<h3 id="Sign_Up_or_Log_in_Bluemix"><a href="#Sign_Up_or_Log_in_Bluemix" class="headerlink" title="Sign Up or Log in Bluemix"></a>Sign Up or Log in Bluemix</h3><ol>
+<li>Bluemix public <a href="https://console.ng.bluemix.net/" target="_blank" rel="external">https://console.ng.bluemix.net/</a></li>
+<li>IBM Bluemix DevOps Services <a href="https://hub.jazz.net/" target="_blank" rel="external">https://hub.jazz.net/</a></li>
+</ol>
+<h3 id="Create_application"><a href="#Create_application" class="headerlink" title="Create application"></a>Create application</h3><ol>
+<li>Click <strong>CREATE APP -&gt; WEB -&gt; PHP</strong> and fill one app name <em>(need to be unique)</em></li>
+<li>Read start coding docuemnt (CF and GIT)</li>
+<li>Click ‘Overview’ in left navigation.</li>
+<li>Click ‘ADD GIT’ then ‘CONTINUE’ to create git repo. <em>‘ADD GIT’ is now replaced with GIT URL and EDIT CODE button.</em></li>
+<li>Copy ‘Routes’ url <strong><em>appname.mybluemix.net</em></strong> and open with browser</li>
+</ol>
+<h3 id="Use_Jazz_to_manange__28Bluemix_DevOps_Services_29"><a href="#Use_Jazz_to_manange__28Bluemix_DevOps_Services_29" class="headerlink" title="Use Jazz to manange (Bluemix DevOps Services)"></a>Use Jazz to manange (Bluemix DevOps Services)</h3><ol>
+<li>Right click in left navigation and create a new file: info.php</li>
+<li>Put <code>&lt;?php phpinfo(); ?&gt;</code> in info.php</li>
+<li>Click ‘Git Repository’, select info.php and commit, then push the commit</li>
+<li>Go back to Edit page and click ‘Deploy’ icon <em>(next to app status bar)</em></li>
+<li>Open <a href="http://appname.mybluemix.net/info.php" target="_blank" rel="external">http://appname.mybluemix.net/info.php</a> in browser</li>
+</ol>
+<h3 id="Use_local_Git_to_manage"><a href="#Use_local_Git_to_manage" class="headerlink" title="Use local Git to manage"></a>Use local Git to manage</h3><ol>
+<li>Check email from sent from <strong>IBM DevOps Services (hub@jazz.net)</strong> and get <strong>Git Repository URL: <a href="https://hub.jazz.net/git/username/appname" target="_blank" rel="external">https://hub.jazz.net/git/username/appname</a></strong></li>
+<li><code>git clone https://hub.jazz.net/git/username/appname</code></li>
+<li>Create a new file: test.php with &lt;?php echo ‘test’; ?&gt;</li>
+<li><code>git add .</code></li>
+<li><code>git commit -m &#39;add test.php&#39;</code></li>
+<li><code>git push origin master</code></li>
+<li>Open <a href="http://appname.mybluemix.net/test.php" target="_blank" rel="external">http://appname.mybluemix.net/test.php</a> in browser</li>
+</ol>
+<h3 id="Test_Stage"><a href="#Test_Stage" class="headerlink" title="Test Stage"></a>Test Stage</h3><ol>
+<li>Go to ‘BUILD &amp; DEPLOY’ page and click ‘ADD STAGE’</li>
+<li>Change name to <strong>Test Stage</strong>. INPUT tab -&gt; Input type <strong>NONE</strong></li>
+<li>JOBS tab -&gt; ADD JOB <strong>Test</strong></li>
+<li><p>Put following code into <strong>Test Command</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment"># invoke tests here</span></span><br><span class="line">http_code=$(curl -m <span class="number">10</span> -I <span class="operator">-s</span>  http://appname.mybluemix.net/test.php -w %&#123;http_code&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$&#123;http_code:9:3&#125;</span>"</span> = <span class="string">"200"</span> ];<span class="keyword">then</span></span><br><span class="line">	<span class="built_in">exit</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">exit</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>SAVE</p>
+</li>
+<li>Drag <strong>Test Stage</strong> and put before <strong>Deploy Stage</strong>.</li>
+<li>Click ‘Run Stage’ icon to test.</li>
+</ol>
+<h2 id="Other_examples"><a href="#Other_examples" class="headerlink" title="Other examples"></a>Other examples</h2><ul>
+<li><a href="http://www.ibm.com/developerworks/cloud/bluemix/fundamentals/index.html" target="_blank" rel="external">IBM Bluemix fundamentals</a></li>
+<li><a href="https://www.ng.bluemix.net/docs/api/content/manageapps/app_architecture/webapp/001.html" target="_blank" rel="external">Blue Messenger (MQTT)</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/cloud/library/cl-cloud-email-app/index.html" target="_blank" rel="external">在无需维护服务器的情况下实现邮件服务</a></li>
+</ul>
 
-  <section class="post" itemscope itemprop="blogPost">
-  
-    <a href="/2015/12/07/bluemix-quick-start/" title="Bluemix Quick Start" itemprop="url">
-  
-    <h1 itemprop="name">Bluemix Quick Start</h1>
-    
-     
-           <p itemprop="description" >Bluemix Quick StartCreate an IBM idhttps://www.ibm.com/account/us-en/signup/register.htmlIgnore if you already have IBM id.
-Sign Up or Log i</p>
         
-    
-    <time datetime="2015-12-07T09:17:44.000Z" itemprop="datePublished">2015-12-07</time>
-  </a>
-</section>
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
 
-  <section class="post" itemscope itemprop="blogPost">
+
+  <div class="article-tags">
   
-    <a href="/2015/12/05/hexo-blog-on-github/" title="Use Hexo Blog on Github" itemprop="url">
-  
-    <h1 itemprop="name">Use Hexo Blog on Github</h1>
+  <span></span> <a href="/tags/bluemix/">bluemix</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-     
-           <p itemprop="description" >Enable your Github blogQuick setup
-Sign in your github, click ‘+’ in top right corner and select ‘New repository’.
-Fill your username as ‘Re</p>
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/12/05/hexo-blog-on-github/" title="Use Hexo Blog on Github" itemprop="url">Use Hexo Blog on Github</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sword Sun" target="_blank" itemprop="author">Sword Sun</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-05T03:03:57.000Z" itemprop="datePublished"> 發表於 2015-12-05</time>
+    
+  </p>
+</header>
+    <div class="article-content">
         
-    
-    <time datetime="2015-12-05T03:03:57.000Z" itemprop="datePublished">2015-12-05</time>
-  </a>
-</section>
+        <h2 id="Enable_your_Github_blog"><a href="#Enable_your_Github_blog" class="headerlink" title="Enable your Github blog"></a>Enable your Github blog</h2><h3 id="Quick_setup"><a href="#Quick_setup" class="headerlink" title="Quick setup"></a>Quick setup</h3><ol>
+<li>Sign in your github, click ‘+’ in top right corner and select ‘New repository’.</li>
+<li>Fill your username as ‘Repository name’ and check ‘Initialize this repository with a README’ (optional).</li>
+<li>Select ‘Settings’ then click ‘Automatic page generator’ button in ‘Update your site’ section.</li>
+<li>Select any theme and click ‘PUBLISH’.</li>
+<li>Done! Now visit your gihub blog: <a href="http://yourusername.github.io" target="_blank" rel="external">http://yourusername.github.io</a></li>
+</ol>
+<h2 id="Install_Hexo_Blog_on_Github"><a href="#Install_Hexo_Blog_on_Github" class="headerlink" title="Install Hexo Blog on Github"></a>Install Hexo Blog on Github</h2><h3 id="Install_npm_first"><a href="#Install_npm_first" class="headerlink" title="Install npm first"></a>Install npm first</h3><p><a href="https://nodejs.org/en/download/" target="_blank" rel="external">Download</a> from NodeJS offical site and install.<br><a href="http://npm.taobao.org/" target="_blank" rel="external">TAOBAO NPM</a></p>
+<h3 id="Install_Hexo"><a href="#Install_Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h3><p><strong>Hexo <a href="https://hexo.io" target="_blank" rel="external">https://hexo.io</a> is a 快速、简洁且高效的博客框架</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> hexo-cli -<span class="keyword">g</span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Initial_local_blog"><a href="#Initial_local_blog" class="headerlink" title="Initial local blog"></a>Initial local blog</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>hexo init blog</span><br><span class="line"><span class="variable">$ </span>cd blog</span><br><span class="line"><span class="variable">$ </span>npm install</span><br></pre></td></tr></table></figure>
+<h3 id="Run_local_hexo_server"><a href="#Run_local_hexo_server" class="headerlink" title="Run local hexo server"></a>Run local hexo server</h3><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">server</span> <span class="comment">//or hexo s</span></span><br></pre></td></tr></table></figure>
+<p><strong><em>_config.yml</em></strong> is the &gt;configuration file of </p>
+<h3 id="Write_a_new_article"><a href="#Write_a_new_article" class="headerlink" title="Write a new article"></a>Write a new article</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">new</span> <span class="string">"test"</span></span><br></pre></td></tr></table></figure>
+<p>A test.md file will be created under <strong><em>sourece/_posts</em></strong>. <strong>md</strong> is file format of Markdown.</p>
+<ul>
+<li><a href="https://guides.github.com/features/mastering-markdown/#examples" target="_blank" rel="external">Mastering Markdown</a>.</li>
+<li><a href="http://www.appinn.com/markdown/" target="_blank" rel="external">中文文档</a>.</li>
+</ul>
+<p>If run <code>hexo new draft &quot;test&quot;</code>, the test.md will be created under <strong><em>sourece/_drafts</em></strong> and won’t be deployed.<br>Run <code>hexo publish &quot;test&quot;</code> to move draft article to <strong><em>sourece/_posts</em></strong></p>
+<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">generate</span> <span class="comment">//or hexo g</span></span><br></pre></td></tr></table></figure>
+<p>Run before you preview you articles. But you may need to run <code>hexo clean</code> first to clean up static files, especially after switch theme, delete article and etc.</p>
+<h3 id="Deploy_to_Gihub"><a href="#Deploy_to_Gihub" class="headerlink" title="Deploy to Gihub"></a>Deploy to Gihub</h3><p>Modify <strong>‘deploy:’</strong> section in _config.yml file<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourusername/yourusername.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
+<p>Run<br><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy <span class="comment">//or hexo d</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Extend"><a href="#Extend" class="headerlink" title="Extend"></a>Extend</h2><h3 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h3><p>View wiki page <a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes</a></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="http://jingyan.baidu.com/article/ed2a5d1f3732cb09f7be1745.html" target="_blank" rel="external">应用github pages创建自己的个人博客</a></li>
+<li><a href="http://dreajay.github.io/2014/11/24/hexo+github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F/" target="_blank" rel="external">hexo+github搭建博客系统</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/github/">github</a><a href="/tags/hexo/">hexo</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
 
 
 </div>
@@ -117,8 +264,15 @@ Fill your username as ‘Re</p>
 <div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
-  <p class="asidetitle">关注</p>
-<iframe width="100%" height="120" class="share_self" marginheight="5px" frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=120&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=1&uid=2583230784&verifier=1d07a1a0&dpc=1"></iframe>
+  
+<div class="github-card">
+<p class="asidetitle">Github 名片</p>
+<div class="github-card" data-github="84drizzt" data-width="220" data-height="119" data-theme="medium">
+<script type="text/javascript" src="//cdn.jsdelivr.net/github-cards/latest/widget.js" ></script>
+</div>
+  </div>
+
+
 
   
 
@@ -127,15 +281,21 @@ Fill your username as ‘Re</p>
 	<p class="asidetitle">標簽</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/bluemix/" title="bluemix">bluemix<sup>1</sup></a></li>
+			
+				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/db2/" title="db2">db2<sup>0</sup></a></li>
+			
+				<li><a href="/tags/github/" title="github">github<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/github/" title="github">github<sup>1</sup></a></li>
+			
+				<li><a href="/tags/bluemix/" title="bluemix">bluemix<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
+			
 		
-			<li><a href="/tags/liquibase/" title="liquibase">liquibase<sup>0</sup></a></li>
+			
 		
 		</ul>
 </div>
@@ -144,46 +304,84 @@ Fill your username as ‘Re</p>
   <div class="linkslist">
   <p class="asidetitle">友情鏈接</p>
     <ul>
-      <li><a href="http://blog.csdn.net/dreajay" target="_blank" title="dreajay csdn">CSDN</a></li>
-      <li><a href="https://github.com/dreajay" target="_blank" title="dreajay github">github</a></li>
-      <li><a href="http://www.douban.com/people/72514701/" target="_blank" title="dreajay豆瓣">豆瓣</a></li>
+        
+          <li>
+            
+            	<a href="http://www.v2ex.com/" target="_blank" title=" 一个关于分享和探索的地方">V2EX</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://cnfeat.com" target="_blank" title=" 一个坚持写字的博客">独立写生</a>
+            
+          </li>
+        
     </ul>
 </div>
 
+  
+
 
   <div class="rsspart">
-	<a href="atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
 </div>
+
+  <div class="weiboshow">
+  <p class="asidetitle">新浪微博</p>
+    <iframe width="100%" height="119" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=119&fansRow=2&ptype=1&speed=0&skin=9&isTitle=1&noborder=1&isWeibo=0&isFans=0&uid=null&verifier=&dpc=1"></iframe>
+</div>
+
 
 </aside>
 </div>
     </div>
     <footer><div id="footer" >
 	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
 	
 	<section class="info">
-		<p> Always Be Cool! <br/>
-			比昨天的自己优秀才是真的优秀！</p>
+		<p> There is nothing noble in being superior to your fellow man <br/>
+			True nobility is being superior to your former self</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
 		
-		<a href="http://weibo.com/2109437041" target="_blank" title="weibo"></a>
+		<a href="http://weibo.com/2109437041" target="_blank" class="icon-weibo" title="微博"></a>
+		
+		
+		<a href="https://github.com/84drizzt" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
-		<a href="https://github.com/84drizzt" target="_blank" title="github"></a>
+		
+		
+		
+		
 		
 		
 	</div>
-		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="pacman">pacman</a> © 2015 
+			
 		
-		<a href="http://yoursite.com" target="_blank" title="Sword Sun">Sword Sun</a>
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="Sword Sun">Sword Sun</a>
+		
 		
 		</p>
 </div>
 </footer>
-    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){ 
   $('.navbar').click(function(){
@@ -201,18 +399,6 @@ $(document).ready(function(){
       a = $('#asidepart'),
       c = $('.closeaside'),
       o = $('.openaside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-      o.css('display', 'none');
-        
-    }
-  });
   c.click(function(){
     a.addClass('fadeOut').css('display', 'none');
     o.css('display', 'block').addClass('fadeIn');
@@ -226,6 +412,18 @@ $(document).ready(function(){
   $(window).scroll(function(){
     o.css("top",Math.max(80,260-$(this).scrollTop()));
   });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
 });
 </script>
 
@@ -238,44 +436,65 @@ $(document).ready(function(){
 
 
 
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F77edef7e6931022edbd2322ec66456e1' type='text/javascript'%3E%3C/script%3E"));
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
 </script>
 
-<div id="totop" style="position:fixed;bottom:150px;right:50px;cursor: pointer;">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
-</div>
-<script type="text/javascript">
-	(function($) { 
-		// When to show the scroll link
-		// higher number = scroll link appears further down the page   
-		var upperLimit = 300;
-		
-		// Our scroll link element
-		var scrollElem = $('#totop');
-	   
-		// Scroll to top speed
-		var scrollSpeed = 800;
-	   
-		// Show and hide the scroll to top link based on scroll position   
-		scrollElem.hide();
-		$(window).scroll(function () {            
-			var scrollTop = $(document).scrollTop();       
-			if ( scrollTop > upperLimit ) {
-				$(scrollElem).stop().fadeTo(300, 1); // fade back in           
-			}else{       
-				$(scrollElem).stop().fadeTo(300, 0); // fade out
-			}
-		});
-		// Scroll to top animation on click
-		$(scrollElem).click(function(){
-			$('html, body').animate({scrollTop:0}, scrollSpeed); return false;
-		});
-	})(jQuery);
+
+
+<!-- Analytics Begin -->
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e6d1f421bbc9962127a50488f9ed37d1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 </script>
 
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
 
   </body>
  </html>
-
