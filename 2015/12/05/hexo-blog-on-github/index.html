@@ -21,7 +21,7 @@ Fill your username as ‘Repository name’ and check ‘Initialize this reposit
 <meta property="og:description" content="Enable your Github blogQuick setup
 Sign in your github, click ‘+’ in top right corner and select ‘New repository’.
 Fill your username as ‘Repository name’ and check ‘Initialize this repository with a">
-<meta property="og:updated_time" content="2015-12-11T09:03:56.000Z">
+<meta property="og:updated_time" content="2015-12-11T09:10:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Use Hexo Blog on Github">
 <meta name="twitter:description" content="Enable your Github blogQuick setup
@@ -124,6 +124,7 @@ Fill your username as ‘Repository name’ and check ‘Initialize this reposit
 <li><a href="https://guides.github.com/features/mastering-markdown/#examples" target="_blank" rel="external">Mastering Markdown</a>.</li>
 <li><a href="http://www.appinn.com/markdown/" target="_blank" rel="external">中文文档</a>.</li>
 </ul>
+<p>If run <code>$ hexo new draft &quot;test&quot;</code>, the test.md will be created under <em>sourece/_drafts</em> and won’t be deployed.</p>
 <h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">generate</span> <span class="comment">//or hexo g</span></span><br></pre></td></tr></table></figure>
 <p>Run before you preview you articles. But you may need to run <code>hexo clean</code> first to clean up static files, especially after switch theme, delete article and etc.</p>
 <h3 id="Deploy_to_Gihub"><a href="#Deploy_to_Gihub" class="headerlink" title="Deploy to Gihub"></a>Deploy to Gihub</h3><p>Modify <strong>deploy:</strong> section in _config.yml file<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourusername/yourusername.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
@@ -161,19 +162,6 @@ Fill your username as ‘Repository name’ and check ‘Initialize this reposit
    	       
 	</article>
 	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2015/12/07/bluemix-quick-start/" title="Bluemix Quick Start">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Bluemix Quick Start</span>
-</a>
-</div>
-
-
-</nav>
-
 	
 
 </div>  
@@ -216,7 +204,9 @@ Fill your username as ‘Repository name’ and check ‘Initialize this reposit
 			
 		
 			
-				<li><a href="/tags/bluemix/" title="bluemix">bluemix<sup>1</sup></a></li>
+		
+			
+		
 			
 		
 		</ul>

@@ -81,105 +81,6 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/12/07/bluemix-quick-start/" title="Bluemix Quick Start" itemprop="url">Bluemix Quick Start</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="Sword Sun" target="_blank" itemprop="author">Sword Sun</a>
-		
-  <p class="article-time">
-    <time datetime="2015-12-07T09:17:44.000Z" itemprop="datePublished"> 發表於 2015-12-07</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <h2 id="Bluemix_Quick_Start"><a href="#Bluemix_Quick_Start" class="headerlink" title="Bluemix Quick Start"></a>Bluemix Quick Start</h2><h3 id="Create_an_IBM_id"><a href="#Create_an_IBM_id" class="headerlink" title="Create an IBM id"></a>Create an IBM id</h3><p><a href="https://www.ibm.com/account/us-en/signup/register.html" target="_blank" rel="external">https://www.ibm.com/account/us-en/signup/register.html</a><br><em>Ignore if you already have IBM id.</em></p>
-<h3 id="Sign_Up_or_Log_in_Bluemix"><a href="#Sign_Up_or_Log_in_Bluemix" class="headerlink" title="Sign Up or Log in Bluemix"></a>Sign Up or Log in Bluemix</h3><ol>
-<li>Bluemix public <a href="https://console.ng.bluemix.net/" target="_blank" rel="external">https://console.ng.bluemix.net/</a></li>
-<li>IBM Bluemix DevOps Services <a href="https://hub.jazz.net/" target="_blank" rel="external">https://hub.jazz.net/</a></li>
-</ol>
-<h3 id="Create_application"><a href="#Create_application" class="headerlink" title="Create application"></a>Create application</h3><ol>
-<li>Click <strong>CREATE APP -&gt; WEB -&gt; PHP</strong> and fill one app name <em>(need to be unique)</em></li>
-<li>Read start coding docuemnt (CF and GIT)</li>
-<li>Click ‘Overview’ in left navigation.</li>
-<li>Click ‘ADD GIT’ then ‘CONTINUE’ to create git repo. <em>‘ADD GIT’ is now replaced with GIT URL and EDIT CODE button.</em></li>
-<li>Copy ‘Routes’ url <strong><em>appname.mybluemix.net</em></strong> and open with browser</li>
-</ol>
-<h3 id="Use_Jazz__28Bluemix_DevOps_Services_29"><a href="#Use_Jazz__28Bluemix_DevOps_Services_29" class="headerlink" title="Use Jazz (Bluemix DevOps Services)"></a>Use Jazz (Bluemix DevOps Services)</h3><ol>
-<li>Right click in left navigation and create a new file: info.php</li>
-<li>Put <code>&lt;?php phpinfo(); ?&gt;</code> in info.php</li>
-<li>Click ‘Git Repository’, select info.php and commit, then push the commit</li>
-<li>Go back to Edit page and click ‘Deploy’ icon <em>(next to app status bar)</em></li>
-<li>Open <a href="http://appname.mybluemix.net/info.php" target="_blank" rel="external">http://appname.mybluemix.net/info.php</a> in browser</li>
-</ol>
-<h3 id="Git_local"><a href="#Git_local" class="headerlink" title="Git local"></a>Git local</h3><ol>
-<li>Check email from sent from <strong>IBM DevOps Services (hub@jazz.net)</strong> and get <strong>Git Repository URL: <a href="https://hub.jazz.net/git/username/appname" target="_blank" rel="external">https://hub.jazz.net/git/username/appname</a></strong></li>
-<li><code>git clone https://hub.jazz.net/git/username/appname</code></li>
-<li>Create a new file: test.php with &lt;?php echo ‘test’; ?&gt;</li>
-<li><code>git add .</code></li>
-<li><code>git commit -m &#39;add test.php&#39;</code></li>
-<li><code>git push origin master</code></li>
-<li>Open <a href="http://appname.mybluemix.net/test.php" target="_blank" rel="external">http://appname.mybluemix.net/test.php</a> in browser</li>
-</ol>
-<h3 id="Test_Stage"><a href="#Test_Stage" class="headerlink" title="Test Stage"></a>Test Stage</h3><ol>
-<li>Go to ‘BUILD &amp; DEPLOY’ page and click ‘ADD STAGE’</li>
-<li>Change name to <strong>Test Stage</strong>. INPUT tab -&gt; Input type <strong>NONE</strong></li>
-<li>JOBS tab -&gt; ADD JOB <strong>Test</strong></li>
-<li><p>Put following code into <strong>Test Command</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="shebang">#!/bin/bash</span></span><br><span class="line"><span class="comment"># invoke tests here</span></span><br><span class="line">http_code=$(curl -m <span class="number">10</span> -I <span class="operator">-s</span>  http://appname.mybluemix.net/test.php -w %&#123;http_code&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$&#123;http_code:9:3&#125;</span>"</span> = <span class="string">"200"</span> ];<span class="keyword">then</span></span><br><span class="line">	<span class="built_in">exit</span> <span class="number">0</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">	<span class="built_in">exit</span> <span class="number">1</span>;</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>SAVE</p>
-</li>
-<li>Drag <strong>Test Stage</strong> and put before <strong>Deploy Stage</strong>.</li>
-<li>Click ‘Run Stage’ icon to test.</li>
-</ol>
-<h2 id="Other_examples"><a href="#Other_examples" class="headerlink" title="Other examples"></a>Other examples</h2><ul>
-<li><a href="http://www.ibm.com/developerworks/cloud/bluemix/fundamentals/index.html" target="_blank" rel="external">IBM Bluemix fundamentals</a></li>
-<li><a href="https://www.ng.bluemix.net/docs/api/content/manageapps/app_architecture/webapp/001.html" target="_blank" rel="external">Blue Messenger (MQTT)</a></li>
-<li><a href="http://www.ibm.com/developerworks/cn/cloud/library/cl-cloud-email-app/index.html" target="_blank" rel="external">在无需维护服务器的情况下实现邮件服务</a></li>
-</ul>
-
-        
-        
-        <p class="article-more-link">
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/bluemix/">bluemix</a>
-  </div>
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
       <a href="/2015/12/05/hexo-blog-on-github/" title="Use Hexo Blog on Github" itemprop="url">Use Hexo Blog on Github</a>
   </h1>
   <p class="article-author">By
@@ -211,6 +112,7 @@
 <li><a href="https://guides.github.com/features/mastering-markdown/#examples" target="_blank" rel="external">Mastering Markdown</a>.</li>
 <li><a href="http://www.appinn.com/markdown/" target="_blank" rel="external">中文文档</a>.</li>
 </ul>
+<p>If run <code>$ hexo new draft &quot;test&quot;</code>, the test.md will be created under <em>sourece/_drafts</em> and won’t be deployed.</p>
 <h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo <span class="keyword">generate</span> <span class="comment">//or hexo g</span></span><br></pre></td></tr></table></figure>
 <p>Run before you preview you articles. But you may need to run <code>hexo clean</code> first to clean up static files, especially after switch theme, delete article and etc.</p>
 <h3 id="Deploy_to_Gihub"><a href="#Deploy_to_Gihub" class="headerlink" title="Deploy to Gihub"></a>Deploy to Gihub</h3><p>Modify <strong>deploy:</strong> section in _config.yml file<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:yourusername/yourusername.github.io.git</span><br><span class="line">  <span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure></p>
@@ -289,7 +191,9 @@
 			
 		
 			
-				<li><a href="/tags/bluemix/" title="bluemix">bluemix<sup>1</sup></a></li>
+		
+			
+		
 			
 		
 		</ul>
