@@ -81,6 +81,69 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/12/14/use-npm-in-china/" title="Use NPM in China" itemprop="url">Use NPM in China</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sword Sun" target="_blank" itemprop="author">Sword Sun</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-14T08:53:55.000Z" itemprop="datePublished"> 發表於 2015-12-14</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Use_npm_in_China"><a href="#Use_npm_in_China" class="headerlink" title="Use npm in China"></a>Use npm in China</h2><h3 id="Use_npm__28Temporary_use_29_3A"><a href="#Use_npm__28Temporary_use_29_3A" class="headerlink" title="Use npm (Temporary use):"></a>Use npm (Temporary use):</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> --registry <span class="attribute">https</span>:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org install [name]</span><br></pre></td></tr></table></figure>
+<h3 id="Use_npm__28Permanent_use_29_3A"><a href="#Use_npm__28Permanent_use_29_3A" class="headerlink" title="Use npm (Permanent use):"></a>Use npm (Permanent use):</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> config set registry <span class="attribute">https</span>:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org</span><br><span class="line">$ <span class="built_in">npm</span> install [name]</span><br></pre></td></tr></table></figure>
+<p>Or manually add <code>registry=https://registry.npm.taobao.org</code> in <code>~/.npmrc</code></p>
+<p>Verify : <code>npm config get registry</code></p>
+<h3 id="Use_cnpm_instead"><a href="#Use_cnpm_instead" class="headerlink" title="Use cnpm instead"></a>Use cnpm instead</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="operator"><span class="keyword">install</span> -<span class="keyword">g</span> cnpm <span class="comment">--registry=https://registry.npm.taobao.org</span></span><br><span class="line">$ cnpm <span class="keyword">install</span> [<span class="keyword">name</span>]</span></span><br></pre></td></tr></table></figure>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li>TAOBAO NPM <a href="http://npm.taobao.org/" target="_blank" rel="external">http://npm.taobao.org/</a></li>
+<li><a href="http://riny.net/2014/cnpm/" target="_blank" rel="external">国内优秀npm镜像推荐及使用</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/npm/">npm</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/12/07/bluemix-quick-start/" title="Bluemix Quick Start" itemprop="url">Bluemix Quick Start</a>
   </h1>
   <p class="article-author">By
@@ -282,6 +345,10 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/npm/" title="npm">npm<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/hexo/" title="hexo">hexo<sup>1</sup></a></li>
 			
 		
@@ -291,6 +358,8 @@
 		
 			
 				<li><a href="/tags/bluemix/" title="bluemix">bluemix<sup>1</sup></a></li>
+			
+		
 			
 		
 			
