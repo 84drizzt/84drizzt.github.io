@@ -207,6 +207,85 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2015/12/15/use-liquibase-for-db2/" title="Use Liquibase for DB2" itemprop="url">Use Liquibase for DB2</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sword Sun" target="_blank" itemprop="author">Sword Sun</a>
+		
+  <p class="article-time">
+    <time datetime="2015-12-15T05:53:55.000Z" itemprop="datePublished"> 發表於 2015-12-15</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Prepare"><a href="#Prepare" class="headerlink" title="Prepare"></a>Prepare</h2><p><strong><a href="http://www.liquibase.org" target="_blank" rel="external">Liquibase</a> is an open source database-independent library for tracking, managing and applying database schema changes.</strong></p>
+<h3 id="Download_LiquiBase"><a href="#Download_LiquiBase" class="headerlink" title="Download LiquiBase"></a>Download LiquiBase</h3><ol>
+<li>Open <a href="http://www.liquibase.org/download/index.html" target="_blank" rel="external">http://www.liquibase.org/download/index.html</a></li>
+<li>Download the latest package, i.e. liquibase-3.4.2-bin.zip</li>
+<li>Unzip the package</li>
+</ol>
+<h3 id="Download_DB2_JDBC_driver"><a href="#Download_DB2_JDBC_driver" class="headerlink" title="Download DB2 JDBC driver"></a>Download DB2 JDBC driver</h3><ol>
+<li>Open <a href="http://www-01.ibm.com/support/docview.wss?uid=swg21363866" target="_blank" rel="external">http://www-01.ibm.com/support/docview.wss?uid=swg21363866</a></li>
+<li>Select the latest JDBC driver version (3.0 or 4.0) for your DB2 version, i.e. 4.15.134.</li>
+<li>Unzip the package</li>
+</ol>
+<h2 id="Use_Liquibase_for_DB2"><a href="#Use_Liquibase_for_DB2" class="headerlink" title="Use Liquibase for DB2"></a>Use Liquibase for DB2</h2><h3 id="Generate_change_log_from_existing_database"><a href="#Generate_change_log_from_existing_database" class="headerlink" title="Generate change log from existing database"></a>Generate change log from existing database</h3><ol>
+<li>Go to Liquibase folder (where the package unzipped)</li>
+<li>Run<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">./liquibase --driver=com.ibm.db2.jcc.DB2Driver \</span><br><span class="line">	-<span class="ruby">-classpath=<span class="regexp">/PATH/</span><span class="constant">TO</span>/db2jcc4.jar \</span><br><span class="line"></span>	-<span class="ruby">-changeLogFile=<span class="regexp">/PATH/</span><span class="constant">TO</span>/changelog.xml \</span><br><span class="line"></span>	-<span class="ruby">-url=<span class="symbol">jdbc:</span><span class="symbol">db2:</span>/<span class="regexp">/localhost:50000/db</span>_name \</span><br><span class="line"></span>	-<span class="ruby">-username=db_username \</span><br><span class="line"></span>	-<span class="ruby">-password=db_password \</span><br><span class="line"></span>	generateChangeLog</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><em>Don’t create changelog.xml otherwise you will get ‘file already exists’ error</em></p>
+<h3 id="Use_a_configuration_file_containing_default_option_values"><a href="#Use_a_configuration_file_containing_default_option_values" class="headerlink" title="Use a configuration file containing default option values"></a>Use a configuration file containing default option values</h3><p>Liquibase can read paramaters for its execution from standard Java Property files. A simple liquibase.properties file would look like this:<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">driver</span>: oracle.jdbc.OracleDriver</span><br><span class="line"><span class="attribute">classpath</span>: ../ojdbc14.jar</span><br><span class="line"><span class="attribute">url</span>: <span class="attribute">jdbc</span>:<span class="attribute">oracle</span>:<span class="attribute">thin</span>:<span class="variable">@localhost</span>:<span class="number">1521</span>:XE</span><br><span class="line"><span class="attribute">username</span>: tbd</span><br><span class="line"><span class="attribute">password</span>: tbd</span><br></pre></td></tr></table></figure></p>
+<h3 id="Update_database_with_changelog_file"><a href="#Update_database_with_changelog_file" class="headerlink" title="Update database with changelog file"></a>Update database with changelog file</h3><p>Run<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/liquibase --defaultsFile=/</span>PATH<span class="regexp">/TO/</span>liquibase.properties \</span><br><span class="line">	--changeLogFile=<span class="regexp">/PATH/</span>TO/changelog.xml \</span><br><span class="line">	--url=<span class="string">jdbc:</span><span class="string">db2:</span><span class="comment">//localhost:50000/db_name \</span></span><br><span class="line">	update</span><br></pre></td></tr></table></figure></p>
+<h3 id="Generate_Database_Documentation"><a href="#Generate_Database_Documentation" class="headerlink" title="Generate Database Documentation"></a>Generate Database Documentation</h3><p>Run<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.<span class="regexp">/liquibase --defaultsFile=/</span>PATH<span class="regexp">/TO/</span>liquibase.properties \</span><br><span class="line">		--changeLogFile=<span class="regexp">/PATH/</span>TO<span class="comment">//changelog.xml \</span></span><br><span class="line">		--url=<span class="string">jdbc:</span><span class="string">db2:</span><span class="comment">//localhost:50000/db_name \</span></span><br><span class="line">	dbDoc \</span><br><span class="line">		<span class="regexp">/PATH/</span>TO/dbdoc</span><br></pre></td></tr></table></figure></p>
+<p><em>Put dbdoc into host folder of webserver and access dbdoc easily via <a href="http://localhost/dbdoc/" target="_blank" rel="external">http://localhost/dbdoc/</a></em></p>
+<h3 id="Diff_two_databases"><a href="#Diff_two_databases" class="headerlink" title="Diff two databases"></a>Diff two databases</h3><p>Run<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">./liquibase --driver=com.ibm.db2.jcc.DB2Driver \</span><br><span class="line">		-<span class="ruby">-classpath=<span class="regexp">/PATH/</span><span class="constant">TO</span>/db2jcc4.jar \</span><br><span class="line"></span>        -<span class="ruby">-url=<span class="symbol">jdbc:</span><span class="symbol">db2:</span>/<span class="regexp">/localhost:50000/db</span>1 \</span><br><span class="line"></span>        -<span class="ruby">-username=db2inst1 \</span><br><span class="line"></span>     	-<span class="ruby">-password=db2inst1 \</span><br><span class="line"></span>    diff \</span><br><span class="line">        -<span class="ruby">-referenceUrl=<span class="symbol">jdbc:</span><span class="symbol">db2:</span>/<span class="regexp">/localhost:51000/db</span>2 \</span><br><span class="line"></span>        -<span class="ruby">-referenceUsername=db2inst1 \</span><br><span class="line"></span>        -<span class="ruby">-referencePassword=db2inst1 \</span><br><span class="line"></span>    &gt;&gt; /PATH/TO/diff_file</span><br></pre></td></tr></table></figure></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="http://www.ibm.com/developerworks/cn/java/j-ap08058/index.html" target="_blank" rel="external">让开发自动化: 实现自动化数据库迁移</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/db2/">db2</a><a href="/tags/liquibase/">liquibase</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2015/12/14/use-npm-in-china/" title="Use NPM in China" itemprop="url">Use NPM in China</a>
   </h1>
   <p class="article-author">By
@@ -475,6 +554,14 @@
 			
 		
 			
+				<li><a href="/tags/liquibase/" title="liquibase">liquibase<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/db2/" title="db2">db2<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/sublime/" title="sublime">sublime<sup>1</sup></a></li>
 			
 		
@@ -492,10 +579,6 @@
 		
 			
 				<li><a href="/tags/productive/" title="productive">productive<sup>1</sup></a></li>
-			
-		
-			
-		
 			
 		
 			
