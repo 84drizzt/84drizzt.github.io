@@ -81,6 +81,73 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/01/25/db2-monitor-statement/" title="DB2 Monitor, monitor statements" itemprop="url">DB2 Monitor, monitor statements</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sword Sun" target="_blank" itemprop="author">Sword Sun</a>
+		
+  <p class="article-time">
+    <time datetime="2016-01-25T07:33:00.000Z" itemprop="datePublished"> 發表於 2016-01-25</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h3 id="DB2_Monitor_Statements"><a href="#DB2_Monitor_Statements" class="headerlink" title="DB2 Monitor Statements"></a>DB2 Monitor Statements</h3><p>1)查看监视器选项<br>db2 get monitor switches</p>
+<p>2)开启语句跟踪选项<br>db2 update monitor switches using statement on</p>
+<p>3)创建语句监视器，结果输出到文件夹<br>mkdir /Users/swordsun/www/state_event<br>db2 “create event monitor state_event for statements write to file ‘/Users/swordsun/www/state_event’”</p>
+<p>4)激活监视器<br>db2 set event monitor state_event state=1</p>
+<p>5)运行应用程序 例如查询: select * from table_name; </p>
+<p>6)完成输出<br>db2 flush event monitor state_event buffer</p>
+<p>7)关闭、删除监视器<br>db2 set event monitor state_event state=0<br>db2 update monitor switches using statement off<br>db2 drop event monitor state_event</p>
+<p>8)格式化结果并输出到一个文件<br>db2evmon -path /Users/swordsun/www/state_event &gt; /Users/swordsun/www/query.sql</p>
+<h3 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h3><ul>
+<li><a href="http://www.2cto.com/database/201212/175246.html" target="_blank" rel="external">http://www.2cto.com/database/201212/175246.html</a></li>
+<li><a href="http://blog.sina.com.cn/s/blog_68bd10c701014cfo.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_68bd10c701014cfo.html</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/data/library/techarticle/dm-1112qiaob/index.html" target="_blank" rel="external">http://www.ibm.com/developerworks/cn/data/library/techarticle/dm-1112qiaob/index.html</a></li>
+</ul>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/db2/">db2</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/01/05/learn-react-1/" title="Learn React" itemprop="url">Learn React</a>
   </h1>
   <p class="article-author">By
@@ -95,11 +162,10 @@
     <div class="article-content">
         
         <p>想抽空学习学习ReactJS, 发现新东西好多啊，有点跟不上趟了，一点点来吧，先配个开发项目</p>
-<h3 id="Prepare_Express"><a href="#Prepare_Express" class="headerlink" title="Prepare Express"></a>Prepare Express</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> express-generator -<span class="keyword">g</span></span><br><span class="line"></span><br><span class="line">express <span class="comment">--ejs --git myapp</span></span><br><span class="line">cd myapp</span><br><span class="line">npm <span class="keyword">install</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="Prepare_webpack"><a href="#Prepare_webpack" class="headerlink" title="Prepare webpack"></a>Prepare webpack</h3><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> install webpack -g</span><br><span class="line"><span class="built_in">npm</span> init</span><br></pre></td></tr></table></figure>
-<p><em>用于编译ReactJS文件</em></p>
-<h3 id="Prepare_ReactJS"><a href="#Prepare_ReactJS" class="headerlink" title="Prepare ReactJS"></a>Prepare ReactJS</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> <span class="comment">--save react react-dom babel-preset-react</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="Prepare_Express"><a href="#Prepare_Express" class="headerlink" title="Prepare Express"></a>Prepare Express</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> express-generator -<span class="keyword">g</span></span><br><span class="line"></span><br><span class="line">express <span class="comment">--ejs --git myapp 	// use ejs template &amp; generate .gitignore</span></span><br><span class="line">cd myapp</span><br><span class="line">npm <span class="keyword">install</span></span></span><br></pre></td></tr></table></figure>
+<p><strong>Tips</strong><br>Use <code>&lt;? ?&gt;</code> opening/closing tag in ejs, because I use PHP!<br>And use .html extension<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> ejs = <span class="keyword">require</span>(<span class="string">'ejs'</span>);</span><br><span class="line">ejs<span class="built_in">.</span>delimiter = <span class="string">'?'</span>;</span><br><span class="line">app<span class="built_in">.</span><span class="built_in">set</span>(<span class="string">'view engine'</span>, <span class="string">'html'</span>);</span><br><span class="line">app<span class="built_in">.</span>engine(<span class="string">'html'</span>, ejs<span class="built_in">.</span>renderFile);</span><br></pre></td></tr></table></figure></p>
 <p>Test with <code>DEBUG=myapp npm start</code></p>
+<h3 id="Prepare_ReactJS"><a href="#Prepare_ReactJS" class="headerlink" title="Prepare ReactJS"></a>Prepare ReactJS</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> <span class="comment">--save react react-dom</span></span><br><span class="line"></span><br><span class="line">npm <span class="keyword">install</span> <span class="comment">--save-dev babel-loader babel-core babel-preset-es2015 babel-preset-react</span></span></span><br></pre></td></tr></table></figure>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="http://top.jobbole.com/15576/" target="_blank" rel="external">Github干货系列：React 资源集合</a></li>
 <li><a href="http://www.tuicool.com/articles/AzQzEbq" target="_blank" rel="external">http://www.tuicool.com/articles/AzQzEbq</a></li>
@@ -118,7 +184,7 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/ReactJS/">ReactJS</a>
+  <span></span> <a href="/tags/React/">React</a>
   </div>
 
 </div>
@@ -615,7 +681,11 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/productive/" title="productive">productive<sup>1</sup></a></li>
+				<li><a href="/tags/db2/" title="db2">db2<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/React/" title="React">React<sup>1</sup></a></li>
 			
 		
 			
@@ -627,15 +697,7 @@
 			
 		
 			
-				<li><a href="/tags/db2/" title="db2">db2<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/sublime/" title="sublime">sublime<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/ReactJS/" title="ReactJS">ReactJS<sup>1</sup></a></li>
 			
 		
 			
@@ -648,6 +710,10 @@
 		
 			
 				<li><a href="/tags/bluemix/" title="bluemix">bluemix<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/productive/" title="productive">productive<sup>1</sup></a></li>
 			
 		
 		</ul>
