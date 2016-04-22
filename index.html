@@ -81,6 +81,74 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/04/22/2016-04-22/" title="Install APCU on OSX, PHP5.5" itemprop="url">Install APCU on OSX, PHP5.5</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="Sword Sun" target="_blank" itemprop="author">Sword Sun</a>
+		
+  <p class="article-time">
+    <time datetime="2016-04-22T07:33:00.000Z" itemprop="datePublished"> 發表於 2016-04-22</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="Install_APCU_on_OSX_2C_PHP5-5"><a href="#Install_APCU_on_OSX_2C_PHP5-5" class="headerlink" title="Install APCU on OSX, PHP5.5"></a>Install APCU on OSX, PHP5.5</h2><h3 id="Download_from_http_3A//pecl-php-net/package/APCu"><a href="#Download_from_http_3A//pecl-php-net/package/APCu" class="headerlink" title="Download from <a href=" http:="" pecl.php.net="" package="" apcu"="">http://pecl.php.net/package/APCu</a>">Download from <a href="http://pecl.php.net/package/APCu" target="_blank" rel="external">http://pecl.php.net/package/APCu</a></h3><p>Extract apcu-4.0.8.tgz<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> apcu-<span class="number">4.0</span>.<span class="number">8</span>/</span><br><span class="line">phpize</span><br><span class="line"><span class="keyword">make</span> test</span><br><span class="line"><span class="keyword">make</span></span><br><span class="line"><span class="keyword">make</span> install</span><br></pre></td></tr></table></figure></p>
+<h4 id="If_meet__u201Cpcre-h_u201D_error_on_make_test"><a href="#If_meet__u201Cpcre-h_u201D_error_on_make_test" class="headerlink" title="If meet “pcre.h” error on make test"></a>If meet “pcre.h” error on make test</h4><ul>
+<li>Try <code>brew install pcre pcre++</code></li>
+<li>Modify <code>/apcu-4.0.8/Makefile</code>, add <code>-I/usr/local/include</code> to <code>INCLUDES =</code></li>
+</ul>
+<p><em><code>/usr/local/include</code> is where Homebrew would put the pcre.h file</em></p>
+<h3 id="check_and_enable"><a href="#check_and_enable" class="headerlink" title="check and enable"></a>check and enable</h3><ol>
+<li>See whether there is apc.so generated in your php extensions folder, i.e. <code>/usr/lib/php/extensions/no-debug-non-zts-20121212/</code></li>
+<li><p>Modify /private/etc/php.ini, add</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[APCu]</span><br><span class="line">extension=<span class="string">"apcu.so"</span></span><br><span class="line">apc<span class="class">.ttl</span> = <span class="number">1200</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Restart Apache and check phpinfo</p>
+</li>
+</ol>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/PHP/">PHP</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/02/29/db2_runstats/" title="DB2 System Catalog Views" itemprop="url">DB2 System Catalog Views</a>
   </h1>
   <p class="article-author">By
@@ -234,6 +302,22 @@
 <p><strong>Tips</strong><br>Use <code>&lt;? ?&gt;</code> opening/closing tag in ejs, because I use PHP!<br>And use .html extension<br><figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> ejs = <span class="keyword">require</span>(<span class="string">'ejs'</span>);</span><br><span class="line">ejs<span class="built_in">.</span>delimiter = <span class="string">'?'</span>;</span><br><span class="line">app<span class="built_in">.</span><span class="built_in">set</span>(<span class="string">'view engine'</span>, <span class="string">'html'</span>);</span><br><span class="line">app<span class="built_in">.</span>engine(<span class="string">'html'</span>, ejs<span class="built_in">.</span>renderFile);</span><br></pre></td></tr></table></figure></p>
 <p>Test with <code>DEBUG=myapp npm start</code></p>
 <h3 id="Prepare_ReactJS"><a href="#Prepare_ReactJS" class="headerlink" title="Prepare ReactJS"></a>Prepare ReactJS</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> <span class="comment">--save react react-dom</span></span><br><span class="line"></span><br><span class="line">npm <span class="keyword">install</span> <span class="comment">--save-dev babel-loader babel-core babel-preset-es2015 babel-preset-react</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="Node_process_manager"><a href="#Node_process_manager" class="headerlink" title="Node process manager"></a>Node process manager</h2><p>PM2 is heard as a great process manager for NodeJs, so<br><code>npm install -g pm2</code><br><code>pm2 start bin/www -n test</code></p>
+<p><code>pm2-dev run bin/www</code> development mode, auto restart when file changes</p>
+<p>Common commands of <a href="https://www.npmjs.com/package/pm2" target="_blank" rel="external">PM2</a></p>
+<ul>
+<li>pm2 start app.js –name my-api # 命名进程</li>
+<li>pm2 list # 显示所有进程状态</li>
+<li>pm2 logs # 显示所有进程日志</li>
+<li>pm2 monit # 监视所有进程</li>
+<li>pm2 stop all # 停止所有进程</li>
+<li>pm2 restart all # 重启所有进程</li>
+<li>pm2 stop 0 # 停止指定的进程</li>
+<li>pm2 restart 0 # 重启指定的进程</li>
+<li>pm2 delete 0 # 杀死指定的进程</li>
+<li>pm2 delete all # 杀死全部进程</li>
+<li>pm2 web # 运行健壮的 computer API endpoint (<a href="http://localhost:9615" target="_blank" rel="external">http://localhost:9615</a>)</li>
+</ul>
 <h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
 <li><a href="http://top.jobbole.com/15576/" target="_blank" rel="external">Github干货系列：React 资源集合</a></li>
 <li><a href="http://www.tuicool.com/articles/AzQzEbq" target="_blank" rel="external">http://www.tuicool.com/articles/AzQzEbq</a></li>
@@ -757,15 +841,19 @@
 			
 		
 			
-				<li><a href="/tags/npm/" title="npm">npm<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/liquibase/" title="liquibase">liquibase<sup>1</sup></a></li>
 			
 		
 			
+				<li><a href="/tags/DB2/" title="DB2">DB2<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/sublime/" title="sublime">sublime<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/npm/" title="npm">npm<sup>1</sup></a></li>
 			
 		
 			
@@ -777,15 +865,15 @@
 			
 		
 			
-				<li><a href="/tags/DB2/" title="DB2">DB2<sup>1</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/bluemix/" title="bluemix">bluemix<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/productive/" title="productive">productive<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/PHP/" title="PHP">PHP<sup>1</sup></a></li>
 			
 		
 		</ul>
